@@ -1,4 +1,4 @@
-# DbHelper
+# DMS5
 An IOS 10.0 mobile application for online vehicle tracking system of Truck Rear Vison Systems.
 
 Written in Swift 3.0 with CocoaPods dependencies of Alamofire, SwiftJSON, Starscream, GoogleMpas. To run the project, you need to install the pod file first. For pod install, see more info on https://cocoapods.org.
