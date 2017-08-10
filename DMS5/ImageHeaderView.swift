@@ -1,10 +1,3 @@
-//
-//  ImageHeaderCell.swift
-//  SlideMenuControllerSwift
-//
-//  Created by Yuji Hato on 11/3/15.
-//  Copyright © 2015 Yuji Hato. All rights reserved.
-//
 
 import UIKit
 
@@ -56,6 +49,8 @@ class ImageHeaderView : UIView, MKDropdownMenuDelegate, MKDropdownMenuDataSource
         let hashVehicleId: [String: String] = ["vid": selectedVehicleIds[row]]
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "sendScoreRequestNotification"), object: nil, userInfo: hashVehicleId)
         selectedVehicleId = selectedVehicleIds[row]
+        selectedVehicleNo = selectedVehicles[row]
+        selectedDriver = selectedDrivers[row]
         vehicleLabel.text = "\(selectedDrivers[row])'s \(selectedVehicles[row])"
         dropdownMenu.closeAllComponents(animated: true)
     }

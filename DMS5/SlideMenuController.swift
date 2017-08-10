@@ -219,7 +219,7 @@ open class SlideMenuController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     open override func openLeft() {
-        print("second openleft")
+        print("openleft")
         guard let _ = leftViewController else { // If leftViewController is nil, then return
             return
         }
@@ -642,12 +642,14 @@ open class SlideMenuController: UIViewController, UIGestureRecognizerDelegate {
     
     open override func toggleLeft() {
         if isLeftOpen() {
+            print("isLeftOpen")
             closeLeft()
             setCloseWindowLevel()
             // Tracking of close tap is put in here. Because closeMenu is due to be call even when the menu tap.
             
             track(.leftTapClose)
         } else {
+            print("isnotLeftOpen")
             openLeft()
         }
     }
@@ -1041,10 +1043,16 @@ extension UIViewController {
             }
             else{
                 print("is not a slidemenucontroller")
-                viewController = viewController?.parent
+                print(viewController?.restorationIdentifier)
             }
+            viewController = viewController?.parent
         }
         return nil
+    }
+    
+    public func addMenuTrigger(menu: UIButton) {
+        menu.addTarget(self, action: #selector(self.toggleLeft), for: .touchUpInside)
+        print("added menu trigger")
     }
     
     public func addLeftBarButtonWithImage(_ buttonImage: UIImage) {
@@ -1059,6 +1067,7 @@ extension UIViewController {
     
     public func toggleLeft() {
         slideMenuController()?.toggleLeft()
+        print("first toggle left")
     }
 
     public func toggleRight() {
@@ -1066,6 +1075,7 @@ extension UIViewController {
     }
     
     public func openLeft() {
+        print("first openleft")
         slideMenuController()?.openLeft()
     }
     

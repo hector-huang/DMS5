@@ -12,8 +12,21 @@ class ContainerViewController: SlideMenuController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func awakeFromNib() {
+        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "map") {
+            self.mainViewController = controller
+        }
+        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "LeftViewController") {
+            self.leftViewController = controller
+        }
+        super.awakeFromNib()
     }
 
     override func didReceiveMemoryWarning() {
