@@ -7,6 +7,6 @@ The project is based on the websocket communication between the app and our DMS 
 
 The project involves google API key to locate vehicles and call navigation services by Rest. There's upper limit per day so do not overuse for business purpose, see more info on https://developers.google.com/maps/faq. 
 
-The video demo of this app: https://www.youtube.com/watch?v=Bxm77tIw05U.
+The video demo of this app will be uploaded afterwards.
 
 To run this app, just clone or download the repository to your local path and open DMS5.xcworkspace in XCode after intalling pods. 
